@@ -11,20 +11,20 @@
     Number of years
   </dt>
   <dd>
-    <%= params.fetch("users_number2") %>
+    <%= @num_year.to_s %>
   </dd>
   <dt>
     Principal
   </dt>
   <dd>
-    <%= params.fetch("users_number3") %>
+    <%= "$" + @principal.round(2).to_s %>
   </dd>
 
   <dt>
     Payment
   </dt>
   <dd>
-    <%= @the_results %>
+    <%= "$" + @the_results.round(2).to_s %>
   </dd>
 </dl>
 

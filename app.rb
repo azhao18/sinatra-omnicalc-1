@@ -29,10 +29,8 @@ get("/payment/results") do
   @principal= params.fetch("users_number3").to_f
   @num_period = @num_year*12
   @apr_perc=@apr/100
-  @r = (@apr_perc/@num_period)
-  @numer=(@r * @principal)
-  @den = (1-((1+@r)**-@num_period))
-  @the_results=(@numer/@den)
+  @r = @apr_perc/12
+  @the_results= (@r * @principal) / (1-((1+@r)** (-@num_period)))
   erb(:payment_results)
 end
 
