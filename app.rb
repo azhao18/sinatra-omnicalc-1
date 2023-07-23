@@ -35,10 +35,12 @@ get("/payment/results") do
   erb(:payment_results)
 end
 
-def commas(x)
-  str = x.to_s.reverse
-  str.gsub!("([0-9]{3})","\\1,")
-  str.gsub(",$","").reverse
+get("random/new") do
+  erb(:random_new)
+end
+
+get("random/results") do
+  erb(:random_results)
 end
 
 get("/") do
