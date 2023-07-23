@@ -1,5 +1,6 @@
 require "sinatra"
 require "sinatra/reloader"
+require "active_support/all"
 
 
 get("/square/new") do 
@@ -32,6 +33,12 @@ get("/payment/results") do
   @r = @apr_perc/12
   @the_results= (@r * @principal) / (1-((1+@r)** (-@num_period)))
   erb(:payment_results)
+end
+
+def commas(x)
+  str = x.to_s.reverse
+  str.gsub!("([0-9]{3})","\\1,")
+  str.gsub(",$","").reverse
 end
 
 get("/") do

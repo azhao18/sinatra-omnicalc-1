@@ -1,4 +1,4 @@
-<h1> Results of monthly payment calculations</h1>
+<h1> Payment Results</h1>
 
 <dl>
   <dt>
@@ -17,17 +17,17 @@
     Principal
   </dt>
   <dd>
-    <%= "$" + @principal.round(2).to_s %>
+    <%= "$" + @principal.round(2).to_s(:delimited) %>
   </dd>
 
   <dt>
     Payment
   </dt>
   <dd>
-    <%= "$" + @the_results.round(2).to_s %>
+    <%= "$" + @the_results.round(2).to_s(:delimited) %>
   </dd>
 </dl>
 
 <a href="square_root/new">
-  Calculate another square root
+  Calculate another payment
 </a>
