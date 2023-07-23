@@ -17,14 +17,14 @@
     Principal
   </dt>
   <dd>
-    <%= "$" + @principal.round(2).to_s(:delimited) %>
+    <%= @principal.round(2).to_fs(:currency) %>
   </dd>
 
   <dt>
     Payment
   </dt>
   <dd>
-    <%= "$" + @the_results.round(2).to_s(:delimited) %>
+    <%= @the_results.round(2).to_fs(:currency) %>
   </dd>
 </dl>
 
